@@ -1,0 +1,27 @@
+객체안에서 this -> 객체(인스턴스)의 주소
+
+this를 반환 -> 내부 메서드를 다시 호출 가능 -> 메서드 체이닝
+
+const testObject = {
+       method1 : function() {
+        console.log('메서드1 호출');
+        return this;	// 1) this는 객체가 가진 주소, return으로 this를 반환
+       },
+       method2 : function() {
+        console.log('메서드2 호출');
+        return this;
+       },
+       method3 : function() {
+        console.log('메서드3 호출');
+        return this;
+       },
+};
+
+-->
+testObject.method1()	// 2) return this로 메서드 체이닝 가능
+          .method2()	// 1, 2, 3 붙여도 가능
+          .method3();
+-->
+메서드1 호출
+메서드2 호출
+메서드3 호출
