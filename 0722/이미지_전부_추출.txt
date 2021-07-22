@@ -1,0 +1,21 @@
+const html = document.body.innerHTML;
+-->
+const pattern = /<img\s+\S*src=["']?([^"'>]+)["']?[^>]*/igm;
+-->
+let data;
+const images = [];
+while(data = pattern.exec(html)) { // data 객체로 반환 - true, 끝에 도달하면 null - false - 반복 정지
+    images.push(data[1]);
+}
+
+
+<#아이디
+<div id = "id" class= 'class' blblbl>
+/<[\w\W]\s*id\s*=\s*["']\w+["']\s*>
+
+
+<.클래스
+<a href
+< id='skip'>
+/<id\s*=\s*["']([^\D+)]["'][>$]*/ig;
+/<#\S+=\s*["']([ ^\w]+)["'][^>]*/ig;

@@ -1,0 +1,40 @@
+const mobile = '010 2243 7147'; // 010-2243-7147 -정규표현식, 서브패턴()
+// 1. 전화번호 -> 숫자로만 변경
+// 2. ㅅ숫자로 변경된 패턴 -> 서브패턴 -> replace
+
+function mobileFormat(mobile) {
+    /**
+         1. mobile 번호를 전부 숫자로 변경
+            -> 숫자가 아닌 문자를 제거하면 -> 숫자만 남는다
+    */
+    mobile = mobile.replace(/[\D]/g, '');
+    console.log(mobile);
+}
+-->
+mobileFormat('010*2243*7147');
+--> 01022437147
+
+
+ex)) 모바일 패턴 생성
+const mobile = '010 2243 7147'; // 010-2243-7147 -정규표현식, 서브패턴()
+// 1. 전화번호 -> 숫자로만 변경
+// 2. 숫자로 변경된 패턴 -> 서브패턴 -> replace
+
+function mobileFormat(mobile) {
+    /**
+         1. mobile 번호를 전부 숫자로 변경
+            -> 숫자가 아닌 문자를 제거하면 -> 숫자만 남는다
+    */
+    mobile = mobile.replace(/[\D]/g, '');
+    
+    let pattern = /([\d]{3})([\d]{4})([\d]{4})/
+    if (mobile.length == 10) { // 구 휴대전화 번호
+        pattern = /([\d]{3})([\d]{3}([\d]{4})/;
+    }
+
+    mobile = mobile.replace(pattern, '$1-$2-$3');
+    
+    return mobile;
+}
+--> mobileFormat('010*2243*7147');
+-->"010-2243-7147"	(모두 - 로 바뀌어서 나옴)

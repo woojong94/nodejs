@@ -1,0 +1,6 @@
+path
+	.driname
+	.basename
+	.extname
+	
+	.join(기준경로, 상대경로, ...) -> 절대 경로

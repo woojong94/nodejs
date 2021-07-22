@@ -1,0 +1,12 @@
+parse	-> 분해
+path.parse -> 구성요소 경로 분해(dir, filename, ext)
+
+format, stringify -> 결합
+
+JSON.pars
+
+JSON.stringify
+
+querystring.parse
+
+querystring.stringify -> 분해된 -> 원래 문자열

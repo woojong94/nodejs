@@ -1,0 +1,19 @@
+window.setTimeout	- 지연 실행
+window.setInteval		- 지연 반복 실행
+
+
+Node.js
+--> global. 생략
+global.setTimeout		- 지연 실행
+
+global.clearTimeout	- 지연 실행 취소
+
+global.setInterval		- 지연 반복 실행
+
+global.clearInterval		- 지연 반복 실행 취소
+
+global.setImmediate	- 비동기 즉시 실행
+== setTimeout(function() {}, 0);
+							
+global.clearImmediate	- 비동기 즉시 실행 취소
+	

@@ -1,0 +1,3 @@
+this
+	함수 내부 - this === global
+	함수 외부 - this === module.exports

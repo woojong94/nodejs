@@ -1,0 +1,37 @@
+화살표 함수
+	function sum(a, b) {
+		return a+b;
+	}
+	--->
+	const sum = (a,b) => a = b;
+	
+	
+	function print(x) {
+		return x;
+	}
+	--->
+	const print = (x) => x;
+	--->
+	const print = x =? x;
+	
+	
+	function print() {
+		return "출력";
+	}
+	--->
+	const print = () => "출력";
+	
+	
+	함수 정의부가 많은 경우 반드시 {}
+	
+	function sum(a, b) {
+		const c = a + b;
+		
+		return c;
+	}
+	
+	const sum= (a,b) => {
+		const c = a+b;
+		return c;
+	};
+	

@@ -1,0 +1,80 @@
+과제) 네이버 메인(document.body.innerHTML)
+
+1) 태그의 아이디명 전체 추출
+	<div id="아이디명">
+	<div id='아이디명'>
+	<div class='...' data-price='...' id='아이디명?
+	<div id=아이디명>
+	<DIV ID="아이디명">
+	<div      id='아이디명' class='...' data-price='...'>
+		....등등
+	-->
+	/<[a-z0-9]+ .* \s+ id=["']? ([^"'>]+)["']?[^>]*>/igm
+	-->
+	/<[a-z0-9]+.*\s+id=["']?([^"'>]+)["']?[^>]*>/igm
+	
+	
+	-->
+	const html = document.body.innerHTML;
+	-->
+	const pattern = /<[a-z0-9]+.*\s+id=["']?([^"'>]+)["']?[^>]*>/igm;
+	-->
+	let data
+	const ids = [];
+	while (data = pattern.exec(html)) {
+		ids.push(data[1]);
+	-->
+	ids;
+	-> 추출
+
+
+
+
+
+2)	태그의 클래스명 전체 추출
+	<div          class='클래스명'>
+	<div class="클래스명">
+	<div class=클래스명?
+	<div id='...' data-price'...' class='클래스명'>
+	<div class='클래스명' id='...' ......?
+	<DIVCLASS='클래스명'>
+	... 등
+	
+	/<[a-z0-9]+.*\s+class=["']?([^"'>]+)["']?[^>]*>/igm;
+
+
+	-->
+	let data;
+	const classes = [];
+	while (data = pattern.exec(html)) {
+		classes.push(data[1]);
+	}
+	-->
+	classes;
+	--> 추출
+
+
+
+
+3) a태그의 href 속성의 값(링크 URL) 전체 추출
+	<a href="링크 URL">
+	<a href='링크 URL'>
+	<a href=링크 URL>
+	<a class='...' id='...' .... href='링크 URL'>
+	<a href='링크 URL' class='...' id='...'>
+	
+	/<a.*\s+href=["']?([^"'>]+)["']?[^>]*?/igm;
+	
+	-->
+	let data;
+	const links = [];
+	while (data = pattern.exec(html)) {
+		links.push(data[1]);
+	}
+	-->
+	links;
+	--> 추출
+	
+	
+	
+	// 웹사이트에서 특정 항목만 추출해보면서 연습해보자
