@@ -1,0 +1,8 @@
+process.exit() -> 노드 프로세서 중지 -> 실행 중지
+process.nextTick -> 비동기 실행
+
+process.nextTick	- 0 ( 비동기 중에 우선 순위가 가장 높다)
+Promise	- 1(우선 실행 순위)
+setImmediate	- 2	- setTimeout(function() {}, 0);		-> setImmediate 조금 더 빠르긴하다
+setTimeout
+setInterval
